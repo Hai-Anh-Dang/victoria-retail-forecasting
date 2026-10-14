@@ -1,0 +1,203 @@
+{
+  "status": "executed_and_validated",
+  "project": "Victoria liquor retail turnover forecasting",
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "statsmodels": "0.15.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "6.29.5"
+  },
+  "random_seed": 3250,
+  "ETS_simulations": 2000,
+  "runtime_seconds": 38.71,
+  "series_id": "A3349414R",
+  "revision_audit": {
+    "overlap_months": 488,
+    "changed_months": 0,
+    "max_absolute_revision_AUD_m": 0.0,
+    "mean_absolute_revision_AUD_m": 0.0,
+    "mean_signed_revision_AUD_m": 0.0
+  },
+  "data_hashes": {
+    "assignment_vintage.csv": "45b64a460eecde82391aa331e3bf982c55a443dd16ffa0b7cc7df56fb51a25cc",
+    "extension_vintage.csv": "972eaed47670e9a3a0f1a4f559a84b118f4650fb3b36a7172f8b156a059fc01f"
+  },
+  "frozen_selection": {
+    "criterion": "mean 24-month validation MAE across three earlier origins",
+    "chosen_model": "Log SARIMA(2,0,0)(0,1,1)[12]",
+    "family_representatives": [
+      "Log SARIMA(2,0,0)(0,1,1)[12]",
+      "ETS(M,A,M)",
+      "Seasonal naive"
+    ],
+    "origins": [
+      "2016-11-01",
+      "2018-11-01",
+      "2020-11-01"
+    ],
+    "test_origin": "2022-11-01",
+    "selected_without_final_evaluation": true
+  },
+  "final_evaluation_period": [
+    "2022-12-01",
+    "2025-03-01"
+  ],
+  "final_evaluation_metrics": [
+    {
+      "model": "ETS(M,A,M)",
+      "chosen_on_validation": false,
+      "MAE_AUD_m": 16.52822297873226,
+      "RMSE_AUD_m": 21.33484344247128,
+      "MASE": 1.6060576772703536,
+      "mean_error_AUD_m": -7.878807133468777,
+      "n_months": 28,
+      "training_seasonal_scale_AUD_m": 10.291176470588237,
+      "coverage_80": 1.0,
+      "coverage_95": 1.0,
+      "mean_width_80_AUD_m": 129.9055508719725,
+      "mean_width_95_AUD_m": 198.2985815994354
+    },
+    {
+      "model": "Seasonal naive",
+      "chosen_on_validation": false,
+      "MAE_AUD_m": 17.171428571428574,
+      "RMSE_AUD_m": 21.645058822478898,
+      "MASE": 1.668558363614094,
+      "mean_error_AUD_m": 8.271428571428615,
+      "n_months": 28,
+      "training_seasonal_scale_AUD_m": 10.291176470588237,
+      "coverage_80": 1.0,
+      "coverage_95": 1.0,
+      "mean_width_80_AUD_m": 130.69886164811626,
+      "mean_width_95_AUD_m": 201.5425010078698
+    },
+    {
+      "model": "Log SARIMA(2,0,0)(0,1,1)[12]",
+      "chosen_on_validation": true,
+      "MAE_AUD_m": 23.361441440863434,
+      "RMSE_AUD_m": 30.720504119084957,
+      "MASE": 2.270045753041888,
+      "mean_error_AUD_m": -15.203133348922204,
+      "n_months": 28,
+      "training_seasonal_scale_AUD_m": 10.291176470588237,
+      "coverage_80": 1.0,
+      "coverage_95": 1.0,
+      "mean_width_80_AUD_m": 119.33875666568645,
+      "mean_width_95_AUD_m": 183.63245133682724
+    }
+  ],
+  "selected_model_MAE_reduction_percent_vs_baseline": -36.04832785860565,
+  "forecast_origin": "2025-03-01",
+  "forecast_period": [
+    "2025-04-01",
+    "2027-03-01"
+  ],
+  "recommendation": "Validation selected Log SARIMA(2,0,0)(0,1,1)[12]; the best observed final-evaluation MAE belongs to ETS(M,A,M). The selected method's held-out MAE is AUD 23.36 million versus AUD 17.17 million for seasonal naive, with 100.0% empirical coverage for its nominal 95% interval. The final period does not support replacing seasonal naive on point-error grounds; retain the baseline for the next forward assessment. Model choice remains frozen for the reported experiment. Operational adoption requires current data, an agreed decision loss and new forward evidence.",
+  "boundary": "Retrospective local execution; source ends March2025; no current forecast, deployment, or realized benefits claim.",
+  "notebook_sha256": "528eddba3797832c6473e4a3a6cb6c1803b497d6e7dcb080c12a00c93971423b",
+  "checked_at_utc": "2026-10-13T04:01:18.590030+00:00",
+  "validation": {
+    "retained_checks": {
+      "status": "retained_evidence_verified",
+      "mode": "check_saved",
+      "read_only": true,
+      "fresh_execution_claim": false,
+      "notebook": "victoria_liquor_retail_forecasting.ipynb",
+      "notebook_sha256": "528eddba3797832c6473e4a3a6cb6c1803b497d6e7dcb080c12a00c93971423b",
+      "code_cells": 19,
+      "all_code_cells_executed": true,
+      "cell_errors": 0,
+      "embedded_figures": 8,
+      "nbformat_valid": true,
+      "data_hashes": {
+        "assignment_vintage.csv": "45b64a460eecde82391aa331e3bf982c55a443dd16ffa0b7cc7df56fb51a25cc",
+        "extension_vintage.csv": "972eaed47670e9a3a0f1a4f559a84b118f4650fb3b36a7172f8b156a059fc01f"
+      },
+      "python": "3.12.14",
+      "active_dependency_versions": {
+        "asttokens": "3.0.2",
+        "attrs": "26.1.0",
+        "colorama": "0.4.6",
+        "comm": "0.2.2",
+        "contourpy": "1.4.0",
+        "cycler": "0.12.1",
+        "debugpy": "1.8.7",
+        "executing": "2.2.1",
+        "fastjsonschema": "2.22.2",
+        "fonttools": "4.66.1",
+        "formulaic": "1.2.2",
+        "interface-meta": "2.0.1",
+        "ipykernel": "6.29.5",
+        "ipython": "9.17.1",
+        "ipython-pygments-lexers": "1.1.1",
+        "jedi": "0.20.0",
+        "jsonschema": "4.26.0",
+        "jsonschema-specifications": "2025.9.1",
+        "jupyter-client": "8.6.3",
+        "jupyter-core": "5.7.2",
+        "kiwisolver": "1.5.1",
+        "matplotlib": "3.11.2",
+        "matplotlib-inline": "0.2.2",
+        "narwhals": "2.26.0",
+        "nbclient": "0.11.0",
+        "nbformat": "5.11.1",
+        "nest-asyncio": "1.6.0",
+        "numpy": "2.3.5",
+        "packaging": "26.3",
+        "pandas": "3.0.1",
+        "parso": "0.8.7",
+        "patsy": "1.0.3",
+        "pillow": "12.3.0",
+        "platformdirs": "4.12.3",
+        "prompt-toolkit": "3.0.53",
+        "psutil": "7.2.2",
+        "pure-eval": "0.2.4",
+        "pygments": "2.21.0",
+        "pyparsing": "3.3.3",
+        "python-dateutil": "2.9.0.post0",
+        "pywin32": "308",
+        "pyzmq": "26.2.0",
+        "referencing": "0.37.0",
+        "rpds-py": "2026.9.1",
+        "scipy": "1.18.1",
+        "six": "1.17.0",
+        "stack-data": "0.6.3",
+        "statsmodels": "0.15.0",
+        "tornado": "6.4.1",
+        "traitlets": "5.16.1",
+        "typing-extensions": "4.16.0",
+        "tzdata": "2026.4",
+        "wcwidth": "0.9.2",
+        "wrapt": "2.5.0"
+      },
+      "evaluation_models_independently_checked": [
+        "Log SARIMA(2,0,0)(0,1,1)[12]",
+        "ETS(M,A,M)",
+        "Seasonal naive"
+      ],
+      "evaluation_months": 28,
+      "local_links_checked": [
+        "data/README.md",
+        "outputs/05_final_evaluation_forecasts.png",
+        "outputs/evaluation_metrics.csv",
+        "outputs/evaluation_predictions.csv",
+        "outputs/execution_summary.json",
+        "victoria_liquor_retail_forecasting.ipynb"
+      ],
+      "scope": "Retained final predictions/metrics, source hashes, notebook execution and links only. No independent check of omitted CV rows or new model fitting."
+    },
+    "full_run_generated_checks": {
+      "scope": "Regenerated secondary evidence checked during this full run; not required or rechecked by --check.",
+      "validation_assessments_checked": 18,
+      "dated_forecast_months": 24,
+      "directory": ".generated"
+    },
+    "current_interpreter_used_for_kernel": true,
+    "fresh_execution_claim": true
+  }
+}

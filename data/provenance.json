@@ -1,0 +1,58 @@
+{
+  "series_id": "A3349414R",
+  "description": "Victoria liquor retailing turnover",
+  "frequency": "monthly",
+  "series_type": "original, not seasonally adjusted",
+  "unit": "nominal AUD millions, current prices",
+  "grain": "one observation per calendar month for the aggregate industry in Victoria",
+  "source_reference": "https://www.abs.gov.au/statistics/industry/retail-and-wholesale-trade/retail-trade-australia/mar-2025",
+  "source_release_date_note": "Linked ABS March 2025 release is dated 2025-05-02; exact download dates of user files are unknown.",
+  "source_table": "Retail Trade table 11, state by industry subgroup (original)",
+  "extraction": "Selected A3349414R only; metadata skipped explicitly; decimal comma parsed in extension; no imputation or deduplication.",
+  "assignment_source_anomaly": "IA_data.csv has malformed quotation marks in its Sector metadata line and a split 1985-Feb row at physical lines 39-40. The selected value (21.6) is intact before the split; date-matching physical rows were extracted from the first selected columns. The non-date continuation fragment was excluded explicitly. All 488 expected consecutive selected months are preserved and cross-vintage comparison is reported.",
+  "snapshots": {
+    "assignment_vintage.csv": {
+      "source_filename": "IA_data.csv",
+      "source_sha256": "73c5c8acf406b000e4a5efab9488ada4596e4ba1d9179f1e8271c2adad859051",
+      "selected_sha256": "45b64a460eecde82391aa331e3bf982c55a443dd16ffa0b7cc7df56fb51a25cc",
+      "rows": 488,
+      "start": "1982-04-01",
+      "end": "2022-11-01"
+    },
+    "extension_vintage.csv": {
+      "source_filename": "8501011_1.csv",
+      "source_sha256": "9340669772740020c7a1b2aba69523628043333365c487d4377bd4749d3b710d",
+      "selected_sha256": "972eaed47670e9a3a0f1a4f559a84b118f4650fb3b36a7172f8b156a059fc01f",
+      "rows": 516,
+      "start": "1982-04-01",
+      "end": "2025-03-01"
+    }
+  },
+  "adapted_from": [
+    {
+      "filename": "IA2_HaiAnhDang.qmd",
+      "sha256": "166c6591a6dc5ef3e70b3d45c1ee4a23b2d224ce39a27f44279e456f354eaf35"
+    },
+    {
+      "filename": "IA3_HaiAnhDang.qmd",
+      "sha256": "db795196d12f3dce2aa805705c42c67b38b97255fb34cc724f2558193b4e3f47"
+    },
+    {
+      "filename": "IA4_Anh Dang Hai.qmd",
+      "sha256": "d7c3f3316b3b1bfc38b2bf2613471533b46950bd86071f77d394b4b9ec12ecaf"
+    }
+  ],
+  "schema": {
+    "month": "ISO date, first day of calendar month; unique continuous monthly sequence",
+    "turnover_aud_million": "strictly positive float, nominal AUD millions"
+  },
+  "redistribution_note": "Only the single public ABS aggregate series is packaged. Student-ID columns and assignment documents are excluded.",
+  "vintage_policy": "Keep original assignment history for all pre-Dec2022 fitting/validation; evaluate against extension outcomes Dec2022-Mar2025; use full extension snapshot only for dated post-evaluation refit. This is a retrospective experiment, not a verified real-time backtest.",
+  "data_license": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_policy": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer",
+    "attribution": "Australian Bureau of Statistics, Retail Trade, Australia, table11, series A3349414R.",
+    "scope": "Selected aggregate ABS data only; no additional code/prose license selected."
+  }
+}
